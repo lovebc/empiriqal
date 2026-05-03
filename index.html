@@ -967,6 +967,9 @@
       </div>
       <div class="reveal">
         <form id="contactForm">
+          <input type="hidden" name="access_key" value="39b9d5d7-eec5-4ac7-951c-9a14ff928af1">
+          <input type="hidden" name="subject" value="EmpiriQal Enquiry">
+          <input type="hidden" name="from_name" value="EmpiriQal Website">
           <div class="form-row">
             <div class="field">
               <label for="name">Name</label>
@@ -1027,25 +1030,33 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Form — mailto fallback (no backend required)
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const org = document.getElementById('org').value;
-    const interest = document.getElementById('interest').value;
-    const message = document.getElementById('message').value;
-    const subject = encodeURIComponent('EmpiriQal Enquiry — ' + interest);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Organisation: ' + org + '\n' +
-      'Interest: ' + interest + '\n\n' +
-      message
-    );
-    window.location.href = 'mailto:info@empiriqal.ai?subject=' + subject + '&body=' + body;
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at info@empiriqal.ai');
+      }
+    } catch {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please email us directly at info@empiriqal.ai');
+    }
   });
 </script>
 
