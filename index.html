@@ -498,7 +498,39 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--crimson-light);
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.6rem;
     margin-bottom: 1.5rem;
+  }
+
+  .social-link {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(249,247,244,0.5);
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .social-link:hover {
+    border-color: var(--crimson-light);
+    color: var(--crimson-light);
+  }
+
+  .social-link svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .founder-bio {
@@ -886,6 +918,23 @@
       <div class="reveal">
         <div class="founder-name">Brad Love, Ph.D.</div>
         <div class="founder-role">Founder &amp; CEO</div>
+        <div class="social-links">
+          <a href="https://bradlove.org" target="_blank" rel="noopener noreferrer" class="social-link" title="Personal site">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </a>
+          <a href="https://scholar.google.co.uk/citations?user=H8dnlegAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link" title="Google Scholar">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/brad-love-71baaa15/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="10" x2="7" y2="17"/><line x1="7" y1="7" x2="7" y2="7.5"/><path d="M11 10v7M11 13a3 3 0 0 1 6 0v4"/></svg>
+          </a>
+          <a href="https://x.com/ProfData" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter / X">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </a>
+          <a href="https://bsky.app/profile/profdata.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link" title="Bluesky">
+            <svg viewBox="0 0 24 24"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/><path d="M8 13s1-4 4-4 4 4 4 4"/></svg>
+          </a>
+        </div>
         <p class="founder-bio">Brad Love is a computational neuroscientist and AI researcher whose work sits at the intersection of human cognition and machine intelligence. He was a professor at University College London and University of Texas at Austin, as well as a senior scientist in AI at Los Alamos National Laboratory. He is a fellow at the European Lab for Learning and Intelligent Systems (ELLIS), an inaugural Fellow of the Alan Turing Institute, and a Royal Society Wolfson Fellow. He developed models of human learning and decision making, applied them to brain imaging data, and explored how AI systems can be made to think more like people. He is now focused on harnessing AI to accelerate scientific discovery and transform how the world evaluates evidence.</p>
         <div class="credential-list">
           <span class="credential">University College London</span>
