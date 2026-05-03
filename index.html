@@ -56,9 +56,9 @@
     text-decoration: none;
   }
 
-  .nav-logo svg {
-    width: 28px;
-    height: 28px;
+  .nav-logo img {
+    width: 37px;
+    height: 37px;
   }
 
   .nav-wordmark {
@@ -132,9 +132,9 @@
     margin-bottom: 2.5rem;
   }
 
-  .hero-logo svg {
-    width: 72px;
-    height: 72px;
+  .hero-logo img {
+    width: 96px;
+    height: 96px;
   }
 
   h1 {
@@ -440,6 +440,13 @@
     border: 1px solid var(--crimson);
     padding: 0.35rem 0.9rem;
     margin-top: 0.5rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .publication-badge:hover {
+    background: var(--crimson);
+    color: white;
   }
 
   /* ── FOUNDER ── */
@@ -470,12 +477,11 @@
     flex-shrink: 0;
   }
 
-  .founder-portrait svg {
-    width: 80px;
-    height: 80px;
-    stroke: rgba(255,255,255,0.2);
-    fill: none;
-    stroke-width: 1;
+  .founder-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .founder-name {
@@ -700,10 +706,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="45" r="32" fill="none" stroke="#8C1A0F" stroke-width="12"/>
-      <line x1="66" y1="66" x2="88" y2="88" stroke="#8C1A0F" stroke-width="12" stroke-linecap="round"/>
-    </svg>
+    <img src="images/bradColor.svg" alt="EmpiriQal logo">
     <span class="nav-wordmark">Empiri<span>Q</span>al.ai</span>
   </a>
   <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -714,10 +717,7 @@
   <div class="hero-inner">
     <div class="hero-eyebrow">Transforming our Information Ecosystem</div>
     <div class="hero-logo">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="45" r="32" fill="none" stroke="#8C1A0F" stroke-width="9"/>
-        <line x1="66" y1="66" x2="88" y2="88" stroke="#8C1A0F" stroke-width="9" stroke-linecap="round"/>
-      </svg>
+      <img src="images/bradColor.svg" alt="EmpiriQal logo">
     </div>
     <h1>Science produces more than anyone can track and <em>less than anyone can trust.</em></h1>
     <p class="hero-sub">EmpiriQal is the platform that changes both — giving scientists, policymakers, and anyone who reads a headline the means to understand what the evidence actually supports.</p>
@@ -866,9 +866,9 @@
         <p>To succeed, EmpiriQal requires two things to be true. First, LLMs trained on the vast and noisy scientific literature must be able to extract the patterns connecting findings across papers, fields, and time in ways that exceed human capacity. Second, LLMs' predictions must be calibrated: when the model is more confident, it should be more accurate.</p>
         <p>Both ingredients hold. Research published in <em>Nature Human Behaviour</em> showed that LLMs outperform human experts at predicting the outcomes of experiments, and that their confidence scores are calibrated. Follow-up work published in <em>Patterns</em> showed that humans and machines working together consistently outperform either alone.</p>
         <p>Work funded by the Foresight Institute demonstrated that a space of alternative possibilities can be constructed and scored across a corpus of real scientific papers. The core mechanism works. The task now is to scale it.</p>
-        <div class="publication-badge">Nature Human Behaviour — Luo et al., 2025</div>
+        <a href="https://doi.org/10.1038/s41562-024-02046-9" target="_blank" rel="noopener noreferrer" class="publication-badge">Nature Human Behaviour — Luo et al., 2025</a>
         <br>
-        <div class="publication-badge" style="margin-top:0.6rem;">Patterns — Yáñez, Luo, Minero & Love, 2025</div>
+        <a href="https://doi.org/10.1016/j.patter.2025.101423" target="_blank" rel="noopener noreferrer" class="publication-badge" style="margin-top:0.6rem;">Patterns — Yáñez, Luo, Minero & Love, 2025</a>
       </div>
     </div>
   </div>
@@ -881,10 +881,7 @@
     <div class="section-label reveal">Founder</div>
     <div class="founder-layout">
       <div class="founder-portrait reveal">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="38" r="20"/>
-          <path d="M15 85 Q15 65 50 65 Q85 65 85 85"/>
-        </svg>
+        <img src="images/brad3.jpg" alt="Brad Love, Ph.D. — Founder & CEO">
       </div>
       <div class="reveal">
         <div class="founder-name">Brad Love, Ph.D.</div>
